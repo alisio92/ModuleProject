@@ -24,7 +24,7 @@
             <?php
             if (count($eventsArray) >= 2) {
                 ?>
-                <p class="more_items"><a href=""><?php echo $more_events; ?></a></p>
+                <p class="more_items"><a href="eventoverview.php"><?php echo $more_events; ?></a></p>
             <?php
             }
             ?>
@@ -37,7 +37,7 @@
             <?php
             if (count($projectsArray) >= 2) {
                 ?>
-                <p class="more_items"><a href=""><?php echo $more_projects; ?></a></p>
+                <p class="more_items"><a href="projectoverview.php"><?php echo $more_projects; ?></a></p>
             <?php
             }
             ?>
