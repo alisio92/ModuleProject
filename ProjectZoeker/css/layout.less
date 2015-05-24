@@ -15,11 +15,12 @@ body {
   padding: auto;
 }
 
+//home
 .section_header {
   float: left;
   margin: 20px 0px 0px 160px;
   > h1 {
-    font-size: 16 p;
+    font-size: 16px;
   }
   > ul {
     width: 760px;
@@ -62,7 +63,7 @@ body {
   }
 }
 
-#events{
+#events {
   > ul {
     > li {
       float: left;
@@ -86,7 +87,7 @@ body {
   }
 }
 
-#projects{
+#projects {
   > ul {
     > li {
       float: left;
@@ -113,6 +114,111 @@ body {
 .more_items {
   float: right;
   width: 60px;
-  height: 20px
-;
+  height: 20px;
+}
+
+//project overview
+.overview_title {
+  float: left;
+  width: 960px;
+  height: 20px;
+  text-align: center;
+  margin: 10px 0px 0px 0px;
+}
+
+#top {
+  float: right;
+  width: 960px;
+  height: 90px;
+  margin: 10px 0px 0px 0px;
+  > section {
+    float: right;
+    width: 340px;
+    height: 90px;
+    > .new_item {
+      float: right;
+      width: 150px;
+      height: 40px;
+    }
+    > .search_input {
+      float: right;
+      width: 295px;
+      height: 30px;
+      margin: 20px 40px 0px 0px;
+      padding: 0px 0px 0px 5px;
+    }
+  }
+}
+
+#bottom {
+  float: left;
+  width: 960px;
+  height: 500px;
+  margin: 10px 0px 0px 0px;
+  > #filter {
+    float: left;
+    width: 350px;
+    height: 30px;
+    > .section_header {
+      float: left;
+      width: 350px;
+      height: 20px;
+      font-size: 16px;
+    }
+    > #cboSteden {
+      float: left;
+      width: 150px;
+      height: 20px;
+      margin: 0px 0px 0px 180px;
+    }
+    > ul {
+      float: left;
+      width: 350px;
+      height: 100px;
+      list-style: none;
+      > li {
+        float: left;
+        width: 350px;
+        height: 20px;
+        margin: 0px 0px 0px 180px;
+      }
+    }
+  }
+  > #items {
+    float: left;
+    width: 610px;
+    height: 30px;
+    > ul {
+      list-style: none;
+      > li {
+        float: left;
+        width: 610px;
+        height: 100px;
+        border-color: black;
+        border-width: 1px;
+        border-style: solid;
+        margin: 10px 0px 10px 0px;
+        > .project_title, > .project_location, > .project_description {
+          float: left;
+          width: 540px;
+          margin: 5px 0px 5px 20px;
+        }
+        > .project_date {
+          float: right;
+          width: 50px;
+          margin: 5px 0px 5px 0px;
+        }
+        > .event_title, > .event_location, > .event_description {
+          float: left;
+          width: 540px;
+          margin: 5px 0px 5px 20px;
+        }
+        > .event_date {
+          float: right;
+          width: 50px;
+          margin: 5px 0px 5px 0px;
+        }
+      }
+    }
+  }
 }

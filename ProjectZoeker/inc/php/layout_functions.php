@@ -47,6 +47,30 @@ function projects($array)
     }
 }
 
+function project_category($array){
+    for ($i = 0; $i < count($array); $i++) {
+        ?>
+        <li><a href=""><?php echo $array[$i]; ?></a></li>
+    <?php
+    }
+}
+
+function citys($array){
+    for ($i = 0; $i < count($array); $i++) {
+        ?>
+        <option value="<?php echo $array[$i]; ?>"><?php echo $array[$i]; ?></option>
+    <?php
+    }
+}
+
+function event_category($array){
+    for ($i = 0; $i < count($array); $i++) {
+        ?>
+        <li><a href=""><?php echo $array[$i]; ?></a></li>
+    <?php
+    }
+}
+
 function projects_item($date, $img, $name, $reaction)
 {
     return array($date, $img, $name, $reaction);
