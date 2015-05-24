@@ -30,7 +30,7 @@
             ?>
         </section>
         <section id="projects" class="section_header">
-            <h1 class="section_name"><?php echo $future_events; ?></h1>
+            <h1 class="section_name"><?php echo $popular_projects ?></h1>
             <ul>
                 <?php echo projects($projectsArray); ?>
             </ul>
