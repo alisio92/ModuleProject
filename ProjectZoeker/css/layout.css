@@ -209,3 +209,92 @@ body {
   width: 50px;
   margin: 5px 0px 5px 0px;
 }
+#new {
+  float: left;
+  width: 960px;
+}
+#new > h1 {
+  float: left;
+  width: 960px;
+  height: 20px;
+  text-align: center;
+  margin: 10px 0px 0px 0px;
+}
+#new > #label {
+  float: left;
+  width: 260px;
+  margin: 30px 0px 0px 200px;
+}
+#new > #label > p {
+  width: 260px;
+  height: 20px;
+  margin: 10px 0px 0px 0px;
+}
+#new > #label > .textarea {
+  margin: 10px 0px 50px 0px;
+}
+#new > #field {
+  float: left;
+  width: 340px;
+  margin: 30px 0px 0px 0px;
+}
+#new > #field > p {
+  float: left;
+  width: 300px;
+  height: 20px;
+  margin: 10px 0px 0px 0px;
+}
+#new > #field > p > input {
+  width: 295px;
+  height: 20px;
+  padding: 0px 0px 0px 5px;
+}
+#new > #field > textarea {
+  width: 298px;
+  height: 50px;
+  margin: 10px 0px 0px 0px;
+  padding: 0px 0px 0px 5px;
+}
+#new > #field > #cboCategory {
+  width: 300px;
+  height: 20px;
+  margin: 10px 0px 0px 0px;
+  padding: 0px 0px 0px 5px;
+}
+#new > #field > .img {
+  width: 350px;
+  height: 20px;
+  margin: 10px 0px 0px 0px;
+}
+#new > #field > .img > p {
+  width: 350px;
+  height: 20px;
+}
+#new > #field > .img > p > input {
+  float: left;
+  width: 295px;
+  height: 20px;
+  padding: 0px 0px 0px 5px;
+}
+#new > #field > .img > p > button {
+  float: left;
+  width: 35px;
+  height: 20px;
+  margin: -18px 0px 0px 10px;
+}
+#new > #formButton {
+  float: left;
+  width: 960px;
+  margin: 20px 0px 0px 360px;
+}
+#new > #formButton > p {
+  float: left;
+  width: 100px;
+  height: 20px;
+  margin: 0px 0px 0px 20px;
+}
+#new > #formButton > p > button,
+#new > #formButton > p > input {
+  width: 100px;
+  height: 20px;
+}

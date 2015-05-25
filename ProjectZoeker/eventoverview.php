@@ -24,14 +24,10 @@
                     <?php echo citys($citys); ?>
                 </select>
                 <p class="section_header"><?php echo $category_filter ?></p>
-                <ul>
-                    <?php echo event_category($event_categoryArray); ?>
-                </ul>
+                <ul><?php echo event_category($event_categoryArray); ?></ul>
             </section>
             <section id="items">
-                <ul>
-                    <?php echo events($eventsArray); ?>
-                </ul>
+                <ul><?php echo events_limited($eventsArray, $max_shown_events_per_page); ?></ul>
             </section>
         </div>
     </div>

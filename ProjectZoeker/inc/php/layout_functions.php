@@ -1,7 +1,11 @@
 <?php
 function news($array)
 {
-    for ($i = 0; $i < count($array); $i++) {
+    news_limitid($array, count($array));
+}
+
+function news_limitid($array, $amount){
+    for ($i = 0; $i < $amount; $i++) {
         ?>
         <li>
             <section class="news_section_info">
@@ -21,7 +25,12 @@ function news($array)
 
 function events($array)
 {
-    for ($i = 0; $i < count($array); $i++) {
+    events_limited($array, count($array));
+}
+
+function events_limited($array, $amount)
+{
+    for ($i = 0; $i < $amount; $i++) {
         ?>
         <li>
             <p class="event_title"><?php echo $array[$i][0]; ?></p>
@@ -35,7 +44,12 @@ function events($array)
 
 function projects($array)
 {
-    for ($i = 0; $i < count($array); $i++) {
+    projects_limited($array, count($array));
+}
+
+function projects_limited($array, $amount)
+{
+    for ($i = 0; $i < $amount; $i++) {
         ?>
         <li>
             <p class="project_title"><?php echo $array[$i][0]; ?></p>
@@ -51,6 +65,14 @@ function project_category($array){
     for ($i = 0; $i < count($array); $i++) {
         ?>
         <li><a href=""><?php echo $array[$i]; ?></a></li>
+    <?php
+    }
+}
+
+function project_category_options($array){
+    for ($i = 0; $i < count($array); $i++) {
+        ?>
+        <option><?php echo $array[$i]; ?></option>
     <?php
     }
 }

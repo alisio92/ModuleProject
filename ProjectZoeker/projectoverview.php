@@ -24,14 +24,10 @@
                     <?php echo citys($citys); ?>
                 </select>
                 <p class="section_header"><?php echo $category_filter ?></p>
-                <ul>
-                    <?php echo project_category($project_categoryArray); ?>
-                </ul>
+                <ul><?php echo project_category($project_categoryArray); ?></ul>
             </section>
             <section id="items">
-                <ul>
-                    <?php echo projects($projectsArray); ?>
-                </ul>
+                <ul><?php echo projects_limited($projectsArray, $max_shown_projects_per_page); ?></ul>
             </section>
         </div>
     </div>
