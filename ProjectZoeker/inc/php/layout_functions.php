@@ -5,7 +5,10 @@ function news($array)
 }
 
 function news_limitid($array, $amount){
-    for ($i = 0; $i < $amount; $i++) {
+    $max = 0;
+    if($amount > count($array)) $max =  count($array);
+    else $max = $amount;
+    for ($i = 0; $i < $max; $i++) {
         ?>
         <li>
             <section class="news_section_info">
@@ -30,7 +33,10 @@ function events($array)
 
 function events_limited($array, $amount)
 {
-    for ($i = 0; $i < $amount; $i++) {
+    $max = 0;
+    if($amount > count($array)) $max =  count($array);
+    else $max = $amount;
+    for ($i = 0; $i < $max; $i++) {
         ?>
         <li>
             <p class="event_title"><?php echo $array[$i][0]; ?></p>
@@ -49,7 +55,10 @@ function projects($array)
 
 function projects_limited($array, $amount)
 {
-    for ($i = 0; $i < $amount; $i++) {
+    $max = 0;
+    if($amount > count($array)) $max =  count($array);
+    else $max = $amount;
+    for ($i = 0; $i < $max; $i++) {
         ?>
         <li>
             <p class="project_title"><?php echo $array[$i][0]; ?></p>

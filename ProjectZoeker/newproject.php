@@ -26,7 +26,7 @@
             <section id="field">
                 <p><input type="text" placeholder="<?php echo $project_title; ?>" id="title" name="title"/></p>
                 <p><input type="text" placeholder="<?php echo $project_location; ?>" id="location" name="location"/></p>
-                <select id="cboCategory" id="category" name="category">
+                <select id="cboCategory" name="category">
                     <?php echo project_category_options($project_categoryArray); ?>
                 </select>
                 <textarea placeholder="<?php echo $project_description; ?>" id="description" name="description"></textarea>
