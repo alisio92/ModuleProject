@@ -102,6 +102,14 @@ function event_category($array){
     }
 }
 
+function event_category_options($array){
+    for ($i = 0; $i < count($array); $i++) {
+        ?>
+        <option><?php echo $array[$i]; ?></option>
+    <?php
+    }
+}
+
 function projects_item($date, $img, $name, $reaction)
 {
     return array($date, $img, $name, $reaction);
@@ -117,4 +125,19 @@ function news_item($date, $img, $name, $reaction)
     return array($date, $img, $name, $reaction);
 }
 
+function project_options($array){
+    for ($i = 0; $i < count($array); $i++) {
+        ?>
+        <option><?php echo $array[$i][0]; ?></option>
+    <?php
+    }
+}
+
+function event_options($array){
+    for ($i = 0; $i < count($array); $i++) {
+        ?>
+        <option><?php echo $array[$i][0]; ?></option>
+    <?php
+    }
+}
 ?>

@@ -22,8 +22,17 @@
     $events = "Evenementen";
     $new_event = "Nieuw event";
 
+    $event_title = "Titel van het event:";
+    $event_start_date = "Startdatum:";
+    $event_end_date = "Startdatum:";
+    $event_start_time = "Startdatum:";
+    $event_category = "Categorie:";
+    $event_website = "Website:";
+    $event_linked_project = "Gekoppeld aan project:";
+    $event_description = "Omschrijving:";
+
     //UNIVERSAL
-    $project_img = "Foto:";
+    $img = "Foto:";
     $button_img = "Load";
     $reset = "Reset";
     $save = "Opslaan";

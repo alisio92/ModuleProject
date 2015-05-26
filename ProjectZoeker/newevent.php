@@ -13,10 +13,14 @@
         <form id="new" method="post">
             <h1><?php echo $new_project; ?></h1>
             <section id="label">
-                <p><label for="title"><?php echo $project_title; ?></label></p>
-                <p><label for="location"><?php echo $project_location; ?></label></p>
-                <p><label for="category"><?php echo $project_category; ?></label></p>
+                <p><label for="title"><?php echo $event_title; ?></label></p>
+                <p><label for="start_date"><?php echo $event_start_date; ?></label></p>
+                <p><label for="end_date"><?php echo $event_end_date; ?></label></p>
+                <p><label for="start_time"><?php echo $event_start_time; ?></label></p>
+                <p><label for="category"><?php echo $event_category; ?></label></p>
+                <p><label for="website"><?php echo $event_website; ?></label></p>
                 <p class="textarea"><label for="description"><?php echo $project_description; ?></label></p>
+                <p><label for="linked_project"><?php echo $event_linked_project; ?></label></p>
                 <p><label for="img1"><?php echo $img; ?></label></p>
                 <p><label for="img2"><?php echo $img; ?></label></p>
                 <p><label for="img3"><?php echo $img; ?></label></p>
@@ -24,12 +28,21 @@
                 <p><label for="img5"><?php echo $img; ?></label></p>
             </section>
             <section id="field">
-                <p><input type="text" placeholder="<?php echo $project_title; ?>" id="title" name="title"/></p>
-                <p><input type="text" placeholder="<?php echo $project_location; ?>" id="location" name="location"/></p>
+                <p><input type="text" placeholder="<?php echo $event_title; ?>" id="title" name="title"/></p>
+                <p><input type="text" placeholder="<?php echo $event_start_date; ?>" id="start_date" name="start_date"/></p>
+                <p><input type="text" placeholder="<?php echo $event_end_date; ?>" id="end_date" name="end_date"/></p>
+                <p><input type="text" placeholder="<?php echo $event_start_time; ?>" id="start_time" name="start_time"/></p>
                 <select id="cboCategory" name="category" class="cbo">
-                    <?php echo project_category_options($project_categoryArray); ?>
+                    <?php echo event_category_options($event_categoryArray); ?>
                 </select>
-                <textarea placeholder="<?php echo $project_description; ?>" id="description" name="description"></textarea>
+
+                <p><input type="text" placeholder="<?php echo $event_website; ?>" id="website" name="website"/></p>
+
+                <textarea placeholder="<?php echo $event_description; ?>" id="description" name="description"></textarea>
+
+                <select id="cboProjects" name="linked_project" class="cbo">
+                    <?php echo event_options($eventsArray); ?>
+                </select>
 
                 <div class="img">
                     <p><input type="text" placeholder="<?php echo $img; ?>" id="img1" name="img1"/></p>
