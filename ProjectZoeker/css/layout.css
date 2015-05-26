@@ -56,6 +56,15 @@ body {
   height: 50px;
   margin: 20px 0px 0px 50px;
 }
+#events {
+  width: 760px;
+}
+#events > ul {
+  list-style: none;
+}
+#events > ul > .offset {
+  margin: 10px 0px 0px 20px;
+}
 #events > ul > li {
   float: left;
   width: 760px;
@@ -297,4 +306,219 @@ body {
 #new > #formButton > p > input {
   width: 100px;
   height: 20px;
+}
+.info {
+  float: left;
+  width: 745px;
+  margin: 10px 0px 0px 0px;
+}
+.info > .item_name {
+  float: left;
+  width: 150px;
+  height: 20px;
+  margin: 0px 0px 0px 20px;
+}
+.info > .item_value {
+  float: left;
+  width: 575px;
+  height: 20px;
+}
+.buttons {
+  float: left;
+  width: 215px;
+  margin: 10px 0px 0px 0px;
+}
+.buttons > button:nth-child(2) {
+  margin: 0px 0px 0px 10px;
+}
+.buttons > button {
+  width: 100px;
+  height: 40px;
+}
+.images {
+  float: left;
+  width: 960px;
+  margin: 10px 0px 0px 0px;
+}
+.images > p {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 0px 0px 0px 76px;
+}
+.images > p > img {
+  width: 100px;
+  height: 100px;
+}
+.members {
+  float: left;
+  width: 960px;
+  margin: 10px 0px 0px 0px;
+}
+.members > ul {
+  list-style: none;
+  margin: 0px 0px 0px 5px;
+}
+.members > ul > li {
+  float: left;
+  width: 300px;
+  height: 20px;
+  margin: 0px 0px 0px 15px;
+}
+.ads {
+  float: left;
+  width: 960px;
+}
+.ads > ul {
+  list-style: none;
+  margin: 10px 0px 0px 20px;
+}
+.ads > ul > li {
+  float: left;
+  width: 760px;
+  height: 120px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  margin: 10px 0px 10px 0px;
+}
+.ads > ul > li > .ads_name {
+  float: left;
+  width: 540px;
+  height: 20px;
+  margin: 10px 0px 0px 20px;
+}
+.ads > ul > li > .ads_linked_name {
+  float: left;
+  width: 100px;
+  height: 20px;
+  margin: 40px 0px 0px 20px;
+}
+.ads > ul > li > .ads_linked_value {
+  float: left;
+  width: 400px;
+  height: 20px;
+  margin: 40px 0px 0px 0px;
+}
+.ads > ul > li > .ads_img {
+  float: left;
+  width: 100px;
+  height: 120px;
+  margin: 10px 0px 10px 20px;
+}
+.ads > ul > li > .ads_img > img {
+  width: 100px;
+  height: 100px;
+}
+.ads > ul > li > .ads_date {
+  float: right;
+  width: 50px;
+  margin: 5px 0px 5px 0px;
+}
+.articles {
+  float: left;
+  width: 960px;
+}
+.articles > ul {
+  list-style: none;
+  margin: 10px 0px 0px 20px;
+}
+.articles > ul > li {
+  float: left;
+  width: 760px;
+  height: 100px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  margin: 10px 0px 10px 0px;
+}
+.articles > ul > li > .article_name,
+.articles > ul > li > .article_category {
+  float: left;
+  width: 690px;
+  height: 20px;
+  margin: 10px 0px 0px 20px;
+}
+.articles > ul > li > .article_linked_name {
+  float: left;
+  width: 100px;
+  height: 20px;
+  margin: 10px 0px 0px 20px;
+}
+.articles > ul > li > .article_linked_value {
+  float: left;
+  width: 400px;
+  height: 20px;
+  margin: 10px 0px 0px 0px;
+}
+.articles > ul > li > .article_date {
+  float: right;
+  width: 50px;
+  margin: 5px 0px 5px 0px;
+}
+.comments {
+  float: left;
+  width: 960px;
+}
+.comments > ul {
+  list-style: none;
+  margin: 10px 0px 0px 20px;
+}
+.comments > ul > li {
+  float: left;
+  width: 760px;
+  height: 100px;
+  border-top-color: black;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.comments > ul > li > button {
+  float: right;
+  width: 100px;
+  height: 20px;
+  margin: 10px 10px 0px 0px;
+}
+.comments > ul > li > .comment_reaction {
+  float: left;
+  width: 500px;
+  height: 50px;
+  margin: 20px 0px 0px 50px;
+}
+.comments > ul > li > .comment_info {
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+.comments > ul > li > .comment_info > .comment_date,
+.comments > ul > li > .comment_info > .comment_img,
+.comments > ul > li > .comment_info > .comment_name {
+  float: left;
+  width: 50px;
+  margin: 5px 0px 0px 20px;
+}
+.comments > ul > li > .comment_info > .comment_date,
+.comments > ul > li > .comment_info > .comment_name {
+  text-align: center;
+}
+.comment {
+  float: left;
+  width: 700px;
+  height: 80px;
+  margin: 10px 0px 0px 50px;
+}
+.comment > form > p {
+  margin: 0px 0px 10px 10px;
+}
+.comment > form > textarea {
+  width: 700px;
+  height: 50px;
+}
+.comment > form > input {
+  float: right;
+  width: 100px;
+  height: 20px;
+  margin: 10px 0px 0px 0px;
 }

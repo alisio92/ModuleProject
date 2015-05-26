@@ -64,7 +64,12 @@ body {
 }
 
 #events {
+  width: 760px;
   > ul {
+    list-style: none;
+    > .offset {
+      margin: 10px 0px 0px 20px;
+    }
     > li {
       float: left;
       width: 760px;
@@ -309,6 +314,228 @@ body {
         width: 100px;
         height: 20px;
       }
+    }
+  }
+}
+
+//detail project & event
+.info {
+  float: left;
+  width: 745px;
+  margin: 10px 0px 0px 0px;
+  > .item_name {
+    float: left;
+    width: 150px;
+    height: 20px;
+    margin: 0px 0px 0px 20px;
+  }
+  > .item_value {
+    float: left;
+    width: 575px;
+    height: 20px;
+  }
+}
+
+.buttons {
+  float: left;
+  width: 215px;
+  margin: 10px 0px 0px 0px;
+  > button:nth-child(2) {
+    margin: 0px 0px 0px 10px;
+  }
+  > button {
+    width: 100px;
+    height: 40px;
+  }
+}
+
+.images {
+  float: left;
+  width: 960px;
+  margin: 10px 0px 0px 0px;
+  > p {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 0px 0px 0px 76px;
+    > img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.members {
+  float: left;
+  width: 960px;
+  margin: 10px 0px 0px 0px;
+  > ul {
+    list-style: none;
+    margin: 0px 0px 0px 5px;
+    > li {
+      float: left;
+      width: 300px;
+      height: 20px;
+      margin: 0px 0px 0px 15px;
+    }
+  }
+}
+
+.ads {
+  float: left;
+  width: 960px;
+  > ul {
+    list-style: none;
+    margin: 10px 0px 0px 20px;
+    > li {
+      float: left;
+      width: 760px;
+      height: 120px;
+      border-color: black;
+      border-width: 1px;
+      border-style: solid;
+      margin: 10px 0px 10px 0px;
+      > .ads_name {
+        float: left;
+        width: 540px;
+        height: 20px;
+        margin: 10px 0px 0px 20px;
+      }
+      > .ads_linked_name {
+        float: left;
+        width: 100px;
+        height: 20px;
+        margin: 40px 0px 0px 20px;
+      }
+      > .ads_linked_value {
+        float: left;
+        width: 400px;
+        height: 20px;
+        margin: 40px 0px 0px 0px;
+      }
+      > .ads_img {
+        float: left;
+        width: 100px;
+        height: 120px;
+        margin: 10px 0px 10px 20px;
+        > img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      > .ads_date {
+        float: right;
+        width: 50px;
+        margin: 5px 0px 5px 0px;
+      }
+    }
+  }
+}
+
+.articles {
+  float: left;
+  width: 960px;
+  > ul {
+    list-style: none;
+    margin: 10px 0px 0px 20px;
+    > li {
+      float: left;
+      width: 760px;
+      height: 100px;
+      border-color: black;
+      border-width: 1px;
+      border-style: solid;
+      margin: 10px 0px 10px 0px;
+      > .article_name, > .article_category {
+        float: left;
+        width: 690px;
+        height: 20px;
+        margin: 10px 0px 0px 20px;
+      }
+      > .article_linked_name {
+        float: left;
+        width: 100px;
+        height: 20px;
+        margin: 10px 0px 0px 20px;
+      }
+      > .article_linked_value {
+        float: left;
+        width: 400px;
+        height: 20px;
+        margin: 10px 0px 0px 0px;
+      }
+      > .article_date {
+        float: right;
+        width: 50px;
+        margin: 5px 0px 5px 0px;
+      }
+    }
+  }
+}
+
+.comments {
+  float: left;
+  width: 960px;
+  > ul {
+    list-style: none;
+    margin: 10px 0px 0px 20px;
+    > li {
+      float: left;
+      width: 760px;
+      height: 100px;
+      border-top-color: black;
+      border-top-width: 1px;
+      border-top-style: solid;
+      border-bottom-color: black;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      > button {
+        float: right;
+        width: 100px;
+        height: 20px;
+        margin: 10px 10px 0px 0px;
+      }
+      > .comment_reaction {
+        float: left;
+        width: 500px;
+        height: 50px;
+        margin: 20px 0px 0px 50px;
+      }
+      > .comment_info {
+        float: left;
+        width: 50px;
+        height: 50px;
+        > .comment_date, > .comment_img, > .comment_name {
+          float: left;
+          width: 50px;
+          margin: 5px 0px 0px 20px;
+        }
+        > .comment_date, > .comment_name {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.comment {
+  float: left;
+  width: 700px;
+  height: 80px;
+  margin: 10px 0px 0px 50px;
+  > form {
+    > p {
+      margin: 0px 0px 10px 10px;
+    }
+    > textarea {
+      width: 700px;
+      height: 50px;
+    }
+    > input {
+      float: right;
+      width: 100px;
+      height: 20px;
+      margin: 10px 0px 0px 0px;
     }
   }
 }

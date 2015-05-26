@@ -31,6 +31,37 @@
     $event_linked_project = "Gekoppeld aan project:";
     $event_description = "Omschrijving:";
 
+    //PROJECT DETAIL
+    $detail_general = "Algemeen";
+    $detail_owner = "Beheerder:";
+    $detail_creation_date = "Aanmaakdatum:";
+    $detail_location = "Plaats:";
+    $detail_category = "Categorie:";
+    $detail_website = "Website:";
+    $detail_description = "Omschrijving:";
+
+    $detail_images = "Foto's";
+    $detail_members = "Leden:";
+    $detail_linked_events = "Gekoppelde events";
+    $detail_linked_ads = "Gekoppelde zoekertjes";
+    $detail_linked_articles = "Gekoppelde artikels";
+    $detail_more_events = "Meer...";
+    $detail_more_ads = "Meer...";
+    $detail_more_article = "Meer...";
+
+    $detail_edit = "Aanpassen";
+    $detail_delete = "Verwijderen";
+    $detail_register = "Deelnemen";
+    $detail_unregister = "Uitschrijven";
+
+    $ads_linked = "Gekoppeld aan:";
+    $articles_linked = "Gekoppeld aan:";
+
+    $detail_delete_comment = "Verwijder";
+    $detail_more_comment = "Meer...";
+    $detail_place_comment_button = "Plaats";
+    $detail_place_comment = "Plaats een reactie";
+
     //UNIVERSAL
     $img = "Foto:";
     $button_img = "Load";
