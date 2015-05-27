@@ -1,3 +1,4 @@
+<?php include_once("./inc/php/database_functions.php"); ?>
 <?php include_once("./inc/php/array_functions.php"); ?>
 <?php include_once("./inc/php/settings.php"); ?>
 <?php include_once("./inc/php/name.inc.php"); ?>

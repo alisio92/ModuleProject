@@ -27,7 +27,7 @@
                 <p><input type="text" placeholder="<?php echo $project_title; ?>" id="title" name="title"/></p>
                 <p><input type="text" placeholder="<?php echo $project_location; ?>" id="location" name="location"/></p>
                 <select id="cboCategory" name="category" class="cbo">
-                    <?php echo project_category_options($project_categoryArray); ?>
+                    <?php echo project_category_options(get_project_category()); ?>
                 </select>
                 <textarea placeholder="<?php echo $project_description; ?>" id="description" name="description"></textarea>
 

@@ -1,3 +1,5 @@
+<?php include_once("./inc/php/name.inc.php"); ?>
+<?php include_once("name.inc.php"); ?>
 <?php
 function news($array)
 {
@@ -13,14 +15,14 @@ function news_limitid($array, $amount)
         ?>
         <li>
             <section class="news_section_info">
-                <p class="news_date"><?php echo $array[$i][0]; ?></p>
+                <p class="news_date"><?php echo $array[$i]["date"]; ?></p>
 
-                <p class="news_img"><img src="<?php echo $array[$i][1]; ?>"></p>
+                <p class="news_img"><img src="<?php echo $array[$i]["img"]; ?>"></p>
 
-                <p class="news_name"><?php echo $array[$i][2]; ?></p>
+                <p class="news_name"><?php echo $array[$i]["name"]; ?></p>
             </section>
             <section class="news_section_reaction">
-                <p class="news_reaction"><?php echo $array[$i][3]; ?></p>
+                <p class="news_reaction"><?php echo $array[$i]["reaction"]; ?></p>
             </section>
         </li>
     <?php
@@ -40,13 +42,15 @@ function events_limited($array, $amount)
     for ($i = 0; $i < $max; $i++) {
         ?>
         <li>
-            <p class="event_title"><?php echo $array[$i][0]; ?></p>
+            <a href="./eventdetail.php?id=<?php echo $array[$i]["id"]; ?>">
+                <p class="event_title"><?php echo $array[$i]["title"]; ?></p>
 
-            <p class="event_date"><?php echo $array[$i][1]; ?></p>
+                <p class="event_date"><?php echo $array[$i]["date"]; ?></p>
 
-            <p class="event_location"><?php echo $array[$i][2]; ?></p>
+                <p class="event_location"><?php echo $array[$i]["location"]; ?></p>
 
-            <p class="event_description"><?php echo $array[$i][3]; ?></p>
+                <p class="event_description"><?php echo $array[$i]["description"]; ?></p>
+            </a>
         </li>
     <?php
     }
@@ -65,13 +69,15 @@ function projects_limited($array, $amount)
     for ($i = 0; $i < $max; $i++) {
         ?>
         <li>
-            <p class="project_title"><?php echo $array[$i][0]; ?></p>
+            <a href="./projectdetail.php?id=<?php echo $array[$i]["id"]; ?>">
+                <p class="project_title"><?php echo $array[$i]["title"]; ?></p>
 
-            <p class="project_date"><?php echo $array[$i][1]; ?></p>
+                <p class="project_date"><?php echo $array[$i]["date"]; ?></p>
 
-            <p class="project_location"><?php echo $array[$i][2]; ?></p>
+                <p class="project_location"><?php echo $array[$i]["location"]; ?></p>
 
-            <p class="project_description"><?php echo $array[$i][3]; ?></p>
+                <p class="project_description"><?php echo $array[$i]["description"]; ?></p>
+            </a>
         </li>
     <?php
     }
@@ -148,19 +154,22 @@ function linked_events_limited($array, $amount)
     for ($i = 0; $i < $max; $i++) {
         ?>
         <li class="offset">
-            <p class="event_title"><?php echo $array[$i][0]; ?></p>
+            <a href="./eventdetail.php?id=<?php echo $array[$i]["id"]; ?>">
+                <p class="event_title"><?php echo $array[$i]["title"]; ?></p>
 
-            <p class="event_date"><?php echo $array[$i][1]; ?></p>
+                <p class="event_date"><?php echo $array[$i]["date"]; ?></p>
 
-            <p class="event_location"><?php echo $array[$i][2]; ?></p>
+                <p class="event_location"><?php echo $array[$i]["location"]; ?></p>
 
-            <p class="event_description"><?php echo $array[$i][3]; ?></p>
+                <p class="event_description"><?php echo $array[$i]["description"]; ?></p>
+            </a>
         </li>
     <?php
     }
 }
 
-function ads_limited($array, $amount){
+function ads_limited($array, $amount)
+{
     $max = 0;
     if ($amount > count($array)) $max = count($array);
     else $max = $amount;
@@ -168,16 +177,21 @@ function ads_limited($array, $amount){
         ?>
         <li>
             <p class="ads_img"><img src="<?php echo $array[$i][0]; ?>"/></p>
+
             <p class="ads_name"><?php echo $array[$i][1]; ?></p>
+
             <p class="ads_date"><?php echo $array[$i][2]; ?></p>
+
             <p class="ads_linked_name"><?php echo $array[$i][3]; ?></p>
+
             <p class="ads_linked_value"><?php echo $array[$i][4]; ?></p>
         </li>
     <?php
     }
 }
 
-function articles_limited($array, $amount){
+function articles_limited($array, $amount)
+{
     $max = 0;
     if ($amount > count($array)) $max = count($array);
     else $max = $amount;
@@ -198,7 +212,8 @@ function articles_limited($array, $amount){
     }
 }
 
-function comments_limited($array, $amount){
+function comments_limited($array, $amount)
+{
     $max = 0;
     if ($amount > count($array)) $max = count($array);
     else $max = $amount;
@@ -207,7 +222,9 @@ function comments_limited($array, $amount){
         <li>
             <div class="comment_info">
                 <p class="comment_date"><?php echo $array[$i][0]; ?></p>
+
                 <p class="comment_img"><img src="<?php echo $array[$i][1]; ?>"></p>
+
                 <p class="comment_name"><?php echo $array[$i][2]; ?></p>
             </div>
             <p class="comment_reaction"><?php echo $array[$i][3]; ?></p>
@@ -217,11 +234,13 @@ function comments_limited($array, $amount){
     }
 }
 
-function members($array){
+function members($array)
+{
     for ($i = 0; $i < count($array); $i++) {
         ?>
         <li><?php echo $array[$i]; ?></li>
     <?php
     }
 }
+
 ?>

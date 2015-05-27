@@ -33,7 +33,7 @@
                 <p><input type="text" placeholder="<?php echo $event_end_date; ?>" id="end_date" name="end_date"/></p>
                 <p><input type="text" placeholder="<?php echo $event_start_time; ?>" id="start_time" name="start_time"/></p>
                 <select id="cboCategory" name="category" class="cbo">
-                    <?php echo event_category_options($event_categoryArray); ?>
+                    <?php echo event_category_options(get_event_category()); ?>
                 </select>
 
                 <p><input type="text" placeholder="<?php echo $event_website; ?>" id="website" name="website"/></p>

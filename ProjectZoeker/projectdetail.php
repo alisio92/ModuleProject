@@ -13,38 +13,50 @@
         <h1 class="overview_title">Titel project</h1>
         <section class="info">
             <h2 class="section_name"><?php echo $detail_general; ?></h2>
-            <p class="item_name"><?php echo $detail_owner; ?></p>
-            <p class="item_value">test</p>
+            <?php
+            if (!empty($_GET["id"])) {
+                $detail = get_detail(($_GET["id"]));
+                ?>
+                <p class="item_name"><?php echo $detail_owner; ?></p>
+                <p class="item_value"><?php echo $detail["title"]; ?></p>
 
-            <p class="item_name"><?php echo $detail_creation_date; ?></p>
-            <p class="item_value">test</p>
+                <p class="item_name"><?php echo $detail_creation_date; ?></p>
+                <p class="item_value"><?php echo $detail["title"]; ?></p>
 
-            <p class="item_name"><?php echo $detail_location; ?></p>
-            <p class="item_value">test</p>
+                <p class="item_name"><?php echo $detail_location; ?></p>
+                <p class="item_value"><?php echo $detail["title"]; ?></p>
 
-            <p class="item_name"><?php echo $detail_category; ?></p>
-            <p class="item_value">test</p>
+                <p class="item_name"><?php echo $detail_category; ?></p>
+                <p class="item_value"><?php echo $detail["title"]; ?></p>
 
-            <p class="item_name"><?php echo $detail_website; ?></p>
-            <p class="item_value">test</p>
+                <p class="item_name"><?php echo $detail_website; ?></p>
+                <p class="item_value"><?php echo $detail["title"]; ?></p>
 
-            <p class="item_name"><?php echo $detail_description; ?></p>
-            <p class="item_value">test</p>
+                <p class="item_name"><?php echo $detail_description; ?></p>
+                <p class="item_value"><?php echo $detail["title"]; ?></p>
+            <?php
+            }
+            ?>
         </section>
         <section class="buttons">
-            <?php if($project_owner){ ?>
+            <?php if ($project_owner) { ?>
                 <button value="<?php echo $detail_edit; ?>"><?php echo $detail_edit; ?></button>
                 <button value="<?php echo $detail_delete; ?>"><?php echo $detail_delete; ?></button>
-            <?php }else{ ?>
+            <?php } else { ?>
                 <button value="<?php echo $detail_register; ?>"><?php echo $detail_register; ?></button>
             <?php } ?>
         </section>
         <section class="images">
             <h2 class="section_name"><?php echo $detail_images; ?></h2>
+
             <p><img src="./img/temp.jpg""></p>
+
             <p><img src="./img/temp.jpg"></p>
+
             <p><img src="./img/temp.jpg"></p>
+
             <p><img src="./img/temp.jpg"></p>
+
             <p><img src="./img/temp.jpg"></p>
         </section>
         <section class="members">
@@ -53,9 +65,9 @@
         </section>
         <section id="events">
             <h2 class="section_name"><?php echo $detail_linked_events; ?></h2>
-            <ul><?php echo linked_events_limited($eventsArray, $detail_max_shown_events); ?></ul>
+            <ul><?php echo linked_events_limited(get_events(), $detail_max_shown_events); ?></ul>
             <?php
-            if (count($eventsArray) > $detail_max_shown_events) {
+            if (count(get_events()) > $detail_max_shown_events) {
                 ?>
                 <p class="more_items"><a href=""><?php echo $detail_more_events; ?></a></p>
             <?php

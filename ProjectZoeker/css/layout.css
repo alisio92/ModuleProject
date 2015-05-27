@@ -63,7 +63,7 @@ body {
   list-style: none;
 }
 #events > ul > .offset {
-  margin: 10px 0px 0px 20px;
+  margin: 10px 0px 0px 50px;
 }
 #events > ul > li {
   float: left;
@@ -74,14 +74,19 @@ body {
   border-style: solid;
   margin: 10px 0px 10px 0px;
 }
-#events > ul > li > .event_title,
-#events > ul > li > .event_location,
-#events > ul > li > .event_description {
+#events > ul > li > a {
+  float: left;
+  width: 760px;
+  height: 100px;
+}
+#events > ul > li > a > .event_title,
+#events > ul > li > a > .event_location,
+#events > ul > li > a > .event_description {
   float: left;
   width: 690px;
   margin: 5px 0px 5px 20px;
 }
-#events > ul > li > .event_date {
+#events > ul > li > a > .event_date {
   float: right;
   width: 50px;
   margin: 5px 0px 5px 0px;
@@ -95,14 +100,19 @@ body {
   border-style: solid;
   margin: 10px 0px 10px 0px;
 }
-#projects > ul > li > .project_title,
-#projects > ul > li > .project_location,
-#projects > ul > li > .project_description {
+#projects > ul > li > a {
+  float: left;
+  width: 760px;
+  height: 100px;
+}
+#projects > ul > li > a > .project_title,
+#projects > ul > li > a > .project_location,
+#projects > ul > li > a > .project_description {
   float: left;
   width: 690px;
   margin: 5px 0px 5px 20px;
 }
-#projects > ul > li > .project_date {
+#projects > ul > li > a > .project_date {
   float: right;
   width: 50px;
   margin: 5px 0px 5px 0px;
@@ -194,26 +204,31 @@ body {
   border-style: solid;
   margin: 10px 0px 10px 0px;
 }
-#bottom > #items > ul > li > .project_title,
-#bottom > #items > ul > li > .project_location,
-#bottom > #items > ul > li > .project_description {
+#bottom > #items > ul > li > a {
+  float: left;
+  width: 610px;
+  height: 100px;
+}
+#bottom > #items > ul > li > a > .project_title,
+#bottom > #items > ul > li > a > .project_location,
+#bottom > #items > ul > li > a > .project_description {
   float: left;
   width: 540px;
   margin: 5px 0px 5px 20px;
 }
-#bottom > #items > ul > li > .project_date {
+#bottom > #items > ul > li > a > .project_date {
   float: right;
   width: 50px;
   margin: 5px 0px 5px 0px;
 }
-#bottom > #items > ul > li > .event_title,
-#bottom > #items > ul > li > .event_location,
-#bottom > #items > ul > li > .event_description {
+#bottom > #items > ul > li > a > .event_title,
+#bottom > #items > ul > li > a > .event_location,
+#bottom > #items > ul > li > a > .event_description {
   float: left;
   width: 540px;
   margin: 5px 0px 5px 20px;
 }
-#bottom > #items > ul > li > .event_date {
+#bottom > #items > ul > li > a > .event_date {
   float: right;
   width: 50px;
   margin: 5px 0px 5px 0px;
@@ -371,7 +386,7 @@ body {
 }
 .ads > ul {
   list-style: none;
-  margin: 10px 0px 0px 20px;
+  margin: 10px 0px 0px 50px;
 }
 .ads > ul > li {
   float: left;
@@ -421,7 +436,7 @@ body {
 }
 .articles > ul {
   list-style: none;
-  margin: 10px 0px 0px 20px;
+  margin: 10px 0px 0px 50px;
 }
 .articles > ul > li {
   float: left;
@@ -462,7 +477,7 @@ body {
 }
 .comments > ul {
   list-style: none;
-  margin: 10px 0px 0px 20px;
+  margin: 10px 0px 0px 50px;
 }
 .comments > ul > li {
   float: left;
@@ -513,7 +528,7 @@ body {
   margin: 0px 0px 10px 10px;
 }
 .comment > form > textarea {
-  width: 700px;
+  width: 750px;
   height: 50px;
 }
 .comment > form > input {
