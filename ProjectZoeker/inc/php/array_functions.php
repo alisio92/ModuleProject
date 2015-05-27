@@ -1,12 +1,11 @@
 <?php
-function projects_item($id, $title, $date, $location, $description, $members)
+function projects_item($id, $title, $date, $location, $description)
 {
     if($title == null) $title = "";
     if($date == null) $date = "";
     if($location == null) $location = "";
     if($description == null) $description = "";
-    if($members == null) $members = "";
-    return array("id" => $id, "title" => $title, "date" => $date, "location" => $location, "description" => $description, "members" => $members);
+    return array("id" => $id, "title" => $title, "date" => $date, "location" => $location, "description" => $description);
 }
 
 function events_item($id, $title, $date, $location, $description)
@@ -55,5 +54,23 @@ function comments_item($date, $img, $name, $reaction, $delete)
     if($reaction == null) $reaction = "";
     if($delete == null) $delete = "";
     return array($date, $img, $name, $reaction, $delete);
+}
+
+function project_detail($id, $title, $description, $date, $time, $city, $street, $website, $name, $category){
+    if($title == null) $title = "";
+    if($description == null) $description = "";
+    if($date == null) $date = "";
+    if($time == null) $time = "";
+    if($city == null) $city = "";
+    if($street == null) $street = "";
+    if($website == null) $website = "";
+    if($name == null) $name = "";
+    if($category == null) $category = "";
+    return array("id" => $id, "title" => $title, "description" => $description, "date" => $date, "time" =>$time, "city" => $city, "street" => $street, "website" => $website, "name" => $name, "category" => $category);
+}
+
+function citysList($id, $city){
+    if($city == null) $city = "";
+    return array("id" => $id, "city" => $city);
 }
 ?>

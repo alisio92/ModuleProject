@@ -105,7 +105,7 @@ function citys($array)
 {
     for ($i = 0; $i < count($array); $i++) {
         ?>
-        <option value="<?php echo $array[$i]; ?>"><?php echo $array[$i]; ?></option>
+        <option value="<?php echo $array[$i]["city"]; ?>"><?php echo $array[$i]["city"]; ?></option>
     <?php
     }
 }

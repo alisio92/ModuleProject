@@ -2,19 +2,42 @@
 <?php
 function get_projects(){
     $projectsArray = array();
-    $projectsArray[] = projects_item(0, "Titel project1", "Datum", "Plaats", "Omschrijving", 10);
-    $projectsArray[] = projects_item(1, "Titel project2", "Datum", "Plaats", "Omschrijving", 20);
-    $projectsArray[] = projects_item(2, "Titel project3", "Datum", "Plaats", "Omschrijving", 20);
-    $projectsArray[] = projects_item(3, "Titel project4", "Datum", "Plaats", "Omschrijving", 15);
+    $conn = DB_connectie();
+    $sql = "SELECT Id, Titel, Aanmaakdatum, Straat, Omschrijving FROM tblprojecten";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $projectsArray[] = projects_item($row["Id"],$row["Titel"], $row["Aanmaakdatum"], $row["Straat"], $row["Omschrijving"]);
+        }
+    }
+    $conn->close();
     return $projectsArray;
 }
 
-function get_popular_projects($array){
+function get_popular_projects($Amount){
     $projectsArray = array();
-    for($i = 0; $i < count($array); $i++){
-        //TODO meeste leden
-        if($array[$i]["members"] == 20) $projectsArray[] = $array[$i];
+    $conn = DB_connectie();
+    $sql = "SELECT project.Id, project.Titel, project.Aanmaakdatum, project.Straat, project.Omschrijving FROM tblprojecten project join tblprojectgebruikers user on project.Id = user.ProjectId GROUP BY project.Titel ORDER BY count(user.ProjectId) desc LIMIT ?";
+
+    /*SELECT project.Titel, COUNT( tblprojectgebruikers.ProjectId ) cnt
+        FROM tblprojecten project
+        INNER JOIN tblprojectgebruikers ON project.ID = tblprojectgebruikers.ProjectId
+        GROUP BY project.Titel
+        ORDER BY COUNT( tblprojectgebruikers.ProjectId ) DESC
+        LIMIT 2
+     */
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $Amount);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if(!$result){
+        die('Probleem met de query: ' . $conn->error);
     }
+    while($row = $result->fetch_array(MYSQL_ASSOC)){
+        $projectsArray[] = projects_item($row["Id"],$row["Titel"], $row["Aanmaakdatum"], $row["Straat"], $row["Omschrijving"]);
+    }
+    $conn->close();
+    $result->close();
     return $projectsArray;
 }
 
@@ -36,26 +59,49 @@ function get_event_category(){
 
 function get_citys(){
     $citysArray = array();
-    $citysArray[] = "Kortrijk";
-    $citysArray[] = "Waregem";
-    $citysArray[] = "Brussel";
+    $conn = DB_connectie();
+    $sql = "SELECT Id, Gemeente FROM tblsteden";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $citysArray[] = citysList($row["Id"],$row["Gemeente"]);
+        }
+    }
+    $conn->close();
     return $citysArray;
 }
 
 function get_events(){
     $eventsArray = array();
-    $eventsArray[] = events_item(0, "Titel event1", "Datum", "Plaats", "Omschrijving");
-    $eventsArray[] = events_item(1, "Titel event2", "Datum", "Plaats", "Omschrijving");
-    $eventsArray[] = events_item(2, "Titel event3", "Datum", "Plaats", "Omschrijving");
-    $eventsArray[] = events_item(3, "Titel event4", "Datum", "Plaats", "Omschrijving");
+    $conn = DB_connectie();
+    $sql = "SELECT Id, Titel, Datum, Straat, Omschrijving FROM tblevents";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $eventsArray[] = events_item($row["Id"], $row["Titel"], $row["Datum"],  $row["Straat"], $row["Omschrijving"]);
+        }
+    }
+    $conn->close();
     return $eventsArray;
 }
 
-function get_new_events($array, $amount){
+function get_new_events($amount){
     $eventsArray = array();
-    for($i = count($array)-1; $i >= count($array) - 2 ; $i--){
-        $eventsArray[] = $array[$i];
+    $conn = DB_connectie();
+    $sql = "SELECT Id, Titel, Datum, Straat, Omschrijving FROM tblevents ORDER BY Id DESC LIMIT ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $Amount);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if(!$result){
+        die('Probleem met de query: ' . $conn->error);
     }
+    while($row = $result->fetch_array(MYSQL_ASSOC)){
+        $eventsArray[] = events_item($row["Id"], $row["Titel"], $row["Datum"],  $row["Straat"], $row["Omschrijving"]);
+    }
+    $conn->close();
+    $result->close();
     return $eventsArray;
 }
 
@@ -68,12 +114,40 @@ function get_news(){
     return $newsArray;
 }
 
-function get_detail($id){
-    $array = get_projects();
-    for($i = 0; $i < count($array); $i++){
-        if($array[$i]["id"] == $id) {
-            return $array[$i];
-        }
+function get_detail_project($id){
+    $projectDetailArray = array();
+    $conn = DB_connectie();
+    $sql = "SELECT p.Id, p.Titel, p.Omschrijving, p.Aanmaakdatum, p.Looptijd, s.Gemeente, p.Straat, p.Website, u.Naam, p.CategorieId FROM tblprojecten p
+            JOIN tblgebruikers u
+            ON p.AdminId=u.Id
+            JOIN tblsteden s
+            ON p.PlaatsId = s.Id
+            WHERE p.Id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if(!$result){
+        die('Probleem met de query: ' . $conn->error);
     }
+    while($row = $result->fetch_array(MYSQL_ASSOC)){
+        $projectDetailArray = project_detail($row["Id"], $row["Titel"], $row["Omschrijving"],  $row["Aanmaakdatum"], $row["Looptijd"], $row["Gemeente"], $row["Straat"], $row["Website"], $row["Naam"], $row["CategorieId"]);
+    }
+    $conn->close();
+    $result->close();
+    return $projectDetailArray;
+}
+
+function DB_connectie(){
+    $servername = "localhost";
+    $username = "root";
+    $password = "usbw";
+    $dbname = "groenestraat";
+
+    $conn = new MYSQLI($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    return $conn;
 }
 ?>

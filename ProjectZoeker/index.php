@@ -16,7 +16,7 @@
         </section>
         <section id="events" class="section_header">
             <h1 class="section_name"><?php echo $future_events; ?></h1>
-            <ul><?php echo events(get_new_events(get_events(), $max_shown_events)); ?></ul>
+            <ul><?php echo events_limited(get_new_events($max_shown_events), $max_shown_events); ?></ul>
             <?php
             if (count(get_events()) > $max_shown_events) {
                 ?>
@@ -27,7 +27,7 @@
         </section>
         <section id="projects" class="section_header">
             <h1 class="section_name"><?php echo $popular_projects ?></h1>
-            <ul><?php echo projects_limited(get_popular_projects(get_projects()), $max_shown_projects); ?></ul>
+            <ul><?php echo projects_limited(get_popular_projects($max_shown_projects), $max_shown_projects); ?></ul>
             <?php
             if (count(get_projects()) > $max_shown_projects) {
                 ?>

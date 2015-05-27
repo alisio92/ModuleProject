@@ -10,32 +10,38 @@
 <body>
 <div id="wrapper">
     <div id="content">
-        <h1 class="overview_title">Titel project</h1>
+        <?php
+        if (!empty($_GET["id"])) {
+            $detail = get_detail_project(($_GET["id"]));
+        }
+        ?>
+        <h1 class="overview_title"><?php echo $detail["title"]; ?></h1>
         <section class="info">
             <h2 class="section_name"><?php echo $detail_general; ?></h2>
-            <?php
-            if (!empty($_GET["id"])) {
-                $detail = get_detail(($_GET["id"]));
-                ?>
-                <p class="item_name"><?php echo $detail_owner; ?></p>
-                <p class="item_value"><?php echo $detail["title"]; ?></p>
 
-                <p class="item_name"><?php echo $detail_creation_date; ?></p>
-                <p class="item_value"><?php echo $detail["title"]; ?></p>
+            <p class="item_name"><?php echo $detail_owner; ?></p>
 
-                <p class="item_name"><?php echo $detail_location; ?></p>
-                <p class="item_value"><?php echo $detail["title"]; ?></p>
+            <p class="item_value"><?php echo $detail["name"]; ?></p>
 
-                <p class="item_name"><?php echo $detail_category; ?></p>
-                <p class="item_value"><?php echo $detail["title"]; ?></p>
+            <p class="item_name"><?php echo $detail_creation_date; ?></p>
 
-                <p class="item_name"><?php echo $detail_website; ?></p>
-                <p class="item_value"><?php echo $detail["title"]; ?></p>
+            <p class="item_value"><?php echo $detail["date"]; ?></p>
 
-                <p class="item_name"><?php echo $detail_description; ?></p>
-                <p class="item_value"><?php echo $detail["title"]; ?></p>
-            <?php
-            }
+            <p class="item_name"><?php echo $detail_location; ?></p>
+
+            <p class="item_value"><?php echo $detail["street"]; ?></p>
+
+            <p class="item_name"><?php echo $detail_category; ?></p>
+
+            <p class="item_value"><?php echo $detail["category"]; ?></p>
+
+            <p class="item_name"><?php echo $detail_website; ?></p>
+
+            <p class="item_value"><?php echo $detail["website"]; ?></p>
+
+            <p class="item_name"><?php echo $detail_description; ?></p>
+
+            <p class="item_value"><?php echo $detail["description"]; ?></p>
             ?>
         </section>
         <section class="buttons">
